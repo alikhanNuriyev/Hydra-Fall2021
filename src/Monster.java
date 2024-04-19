@@ -1,13 +1,16 @@
 public class Monster {
     private int monsterID;
     private String monsterName;
+    private String monsterDescription;
+
     private int monsterHealthPoints;
     private int monsterAttackPoints;
     private String monsterLocation;
 
-    public Monster(int monsterID, String monsterName, int monsterHealthPoints, int monsterAttackPoints, String monsterLocation) {
+    public Monster(int monsterID, String monsterName, String monsterDescription, int monsterHealthPoints, int monsterAttackPoints, String monsterLocation) {
         this.monsterID = monsterID;
         this.monsterName = monsterName;
+        this.monsterDescription = monsterDescription;
         this.monsterHealthPoints = monsterHealthPoints;
         this.monsterAttackPoints = monsterAttackPoints;
         this.monsterLocation = monsterLocation;
@@ -51,6 +54,14 @@ public class Monster {
 
     public void setMonsterLocation(String monsterLocation) {
         this.monsterLocation = monsterLocation;
+    }
+
+    public String getMonsterDescription() {
+        return monsterDescription;
+    }
+
+    public void setMonsterDescription(String monsterDescription) {
+        this.monsterDescription = monsterDescription;
     }
 
     public void monsterCombat(){
