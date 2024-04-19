@@ -1,0 +1,36 @@
+ID: 1
+Name: Kamdor
+Health Points: 50
+Attack Points: 30
+Location: Room 3
+
+ID : 2
+Name: Thrax
+Health Points: 60
+Attack Points: 45
+Location: Room 4
+
+ID: 3
+Name: Zeltrax
+Health Points: 70
+Attack Points: 65
+Location: Room 2
+
+ID: 3
+Name: Psycho Red
+Health Points: 80
+Attack Points: 70
+Location: Room 1
+
+
+ID: 4
+Name: Helios
+Health Points: 90
+Attack Points: 55
+Location: Room 5
+
+ID: 5
+Name: Count Dooku
+Health Points: 100
+Attack Points: 25
+Location: Room 6

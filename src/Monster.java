@@ -52,4 +52,8 @@ public class Monster {
     public void setMonsterLocation(String monsterLocation) {
         this.monsterLocation = monsterLocation;
     }
+
+    public void monsterCombat(){
+
+    }
 }
