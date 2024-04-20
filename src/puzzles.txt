@@ -1,0 +1,55 @@
+ID: 1
+RoomID: 1
+Name: Galactic Anagram
+Description: Unscramble the letters to reveal the hidden word: "LIENA"
+Answer: Alien
+Hint: Something not from earth
+Attempts: 3
+
+ID: 2
+RoomID: 6
+Name: Galactic Number Guessing
+Description: Make the correct guess in the number range: 1-30
+Answer: 20
+Hint: No hint is available for this puzzle
+Attempts: 3
+
+ID: 3
+RoomID: 14
+Name: Cosmic Riddle Door
+Description: A mysterious door stands before you, adorned with an intricate riddle: ”I speak without a mouth and hear without ears. I have no body, but I come alive with the wind. What am I?”
+Answer: Echo
+Hint: Repeating sound
+Attempts: 3
+
+ID: 4
+RoomID: 8
+Name: Cosmic Math
+Description: (8×4) −(15+3) +(2×6) =?
+Answer: 26
+Hint: There is no hint available for this puzzle
+Attempts: 3
+
+ID: 5
+RoomID: 13
+Name: Cosmic Memory
+Description: What is the name of the spaceship?
+Answer: Odyssey
+Hint: There is no hint available for this puzzle
+Attempts: 3
+
+ID: 6
+RoomID: 16
+Name: galactic Recognition
+Description: Which of the following words do not belong: "Mercury, Venus, Earth, Mars, Pluto,"
+Answer: Pluto
+Hint: There is no hint available for this puzzle
+Attempts: 3
+
+ID: 7
+RoomID: 19
+Name: Cosmic Ordering
+Description: Arrange in ascending order: “4, 0.12, 5, 1, 0.08”.
+Answer: 0.08, 0.12 , 1, 4, 5
+Hint: There is no hint available for this puzzle
+Attempts: 3
