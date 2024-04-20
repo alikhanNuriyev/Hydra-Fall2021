@@ -3,21 +3,21 @@ Name: Slimeoid Prime
 Description: A mix of slime and alien stuff. Watch out for its acid!
 Health Points: 200
 Attack Points: 30
-Location: R5
+Location: 5
 
 ID: 2
 Name: Dr.Xer'kal
 Description: He is an alien scientist doing weird experiments on a ship. His lab is full of scary stuff. He's a bit mad, so be careful!
 Health Points: 300
 Attack Points: 40
-Location: R10
+Location: 10
 
 ID: 3
 Name: Byte-Bane
 Description: A computer with arms and legs, guarding the ship's engine. It is good at controlling things and will try to stop you.
 Health Points: 300
 Attack Points: 45
-Location: R15
+Location: 15
 
 ID: 4
 Name: Voidspawn
@@ -31,26 +31,26 @@ Name: Wisps
 Description: Glowing creatures that float around and zap your energy when they touch you.
 Health Points: 40
 Attack Points: 10
-Location: R2, R4
+Location: 2, 4
 
 ID: 6
 Name: Scrapclawlers
 Description: Small robots with sharp claws, scurrying around to attack you.
 Health Points: 50
 Attack Points: 15
-Location: R7, R9
+Location: 7, 9
 
 ID: 7
 Name: Blobs
 Description: Swollen aliens release harmful fumes and acid.
 Health Points: 70
 Attack Points: 20
-Location: R13, R14
+Location: 13, 14
 
 ID: 8
 Name: Melodies
 Description: Ghostly figures using haunting tunes to trick and trap you.
 Health Points: 60
 Attack Points: 25
-Location: R16, R19
+Location: 16, 19
 
