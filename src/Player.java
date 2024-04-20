@@ -84,4 +84,20 @@ public class Player {
     public void levelUp(){
 
     }
+
+    public void pickupItem(){
+
+    }
+
+    public void equipItem(){
+
+    }
+
+    public void displayInventory(){
+
+    }
+
+    public void dropItem(){
+
+    }
 }
