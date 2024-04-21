@@ -4,23 +4,25 @@ public class Game {
     public static void main(String[] args) throws IOException {
 
         Map map = new Map();
-        map.Initialize("Rooms.txt");
-        map.InitializeItems("Items.txt");
-        map.InitializePuzzles("Puzzles.txt");
-        Player Player1 = new Player(map.getRooms().get(0));
+        map.Initialize("src//Rooms.txt");
+        map.listRooms();
+        //map.InitializeItems("src//items.txt");
+        //map.InitializePuzzles("src//puzzles.txt");
+        Player Player1 = new Player(1, 50, 25, 0, map.getRooms().get(0));
 
         //map.listRooms();
 
-        StartGame(Player1, map.getRooms());
+        //StartGame(Player1, map.getRooms());
 
 
     }
+    /*
     public static void StartGame(Player Player, ArrayList<Room> Map) throws IOException {
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Current location: " + Player.Getlocation().getName());
+        System.out.print("Current location: " + Player.getCurrentRoom().getName());
         System.out.println();
-        System.out.println(Player.Getlocation().getDescription());
+        System.out.println(Player.getCurrentRoom().getDescription());
         System.out.print("\nWhich direction do you want to travel? (N, S, E, W) ");
 
         while(true) {
@@ -129,20 +131,22 @@ public class Game {
             }
 
 
-            System.out.print("Current location: " + Player.Getlocation().getName());
-            if(Player.Getlocation().CheckVisited()){ System.out.print(" (Visited)");}
+            System.out.print("Current location: " + Player.getCurrentRoom().getName());
+            if(Player.getCurrentRoom().CheckVisited()){ System.out.print(" (Visited)");}
             System.out.println();
-            System.out.println(Player.Getlocation().getDescription());
+            System.out.println(Player.getCurrentRoom().getDescription());
 
-            if(Player.current_location.hasPuzzle)
+            if(Player.getCurrentRoom().hasPuzzle)
             {
-//                Player.current_location.puzzle.startPuzzle();
+                Player.getCurrentRoom().puzzle.startPuzzle();
             }
 
             System.out.print("\nWhich direction do you want to travel? (N, S, E, W) ");
-            Map.get(Player.Getlocation().getId() -1).setVisited();
+            Map.get(Player.getCurrentRoom().getId() -1).setVisited();
         }
 
         input.close();
     }
+    */
+
 }

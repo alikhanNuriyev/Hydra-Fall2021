@@ -16,7 +16,7 @@ public class Map {
     void Initialize(String filename) throws FileNotFoundException {
 
         Scanner r_scanner = new Scanner(new File(filename));
-        r_scanner.useDelimiter("~|\n|,");
+        r_scanner.useDelimiter("~|\n");
 
         while (r_scanner.hasNext()) {
             int id = r_scanner.nextInt();
@@ -42,10 +42,15 @@ public class Map {
 
         while (i_scanner.hasNext())
         {
-            int id = Integer.parseInt(i_scanner.nextLine());
+            int id =Integer.parseInt(i_scanner.nextLine());
+            int roomId = Integer.parseInt(i_scanner.nextLine());
             String name = i_scanner.nextLine();
-            String description = i_scanner.nextLine();
-            itemList.add(new Item(id,name, description));
+            String type = i_scanner.nextLine();
+            String desc = i_scanner.nextLine();
+            int atk = Integer.parseInt(i_scanner.nextLine());
+            int health = Integer.parseInt(i_scanner.nextLine());
+            float heal = Integer.parseInt(i_scanner.nextLine());
+            itemList.add(new Item(id, roomId, name, type, desc, atk, health, heal));
         }
         loadRoomInventory();
         i_scanner.close();
@@ -54,7 +59,7 @@ public class Map {
         for (Room i : rooms_list) {
             for(Item j : itemList)
             {
-                if(j.getItemRoomId() == i.getId())
+                if(j.getItemRoom() == i.getId())
                 {
                     i.addItem(j);
                 }
@@ -72,12 +77,13 @@ public class Map {
 
         while (i_scanner.hasNext())
         {
-            String name = i_scanner.nextLine();
-            String description = i_scanner.nextLine();
-            String ans = i_scanner.nextLine();
             int id = Integer.parseInt(i_scanner.nextLine());
-            int att = Integer.parseInt(i_scanner.nextLine());
-            puzzleList.add(new Puzzle(name, description, ans, id, att));
+            int roomId = Integer.parseInt(i_scanner.nextLine());
+            String name = i_scanner.nextLine();
+            String desc = i_scanner.nextLine();
+            String solution = i_scanner.nextLine();
+            String hint = i_scanner.nextLine();
+            puzzleList.add(new Puzzle(id, roomId, name, desc, solution, hint, 3));
         }
         loadRoomPuzzles();
         i_scanner.close();
@@ -88,7 +94,7 @@ public class Map {
         for (Room r : rooms_list) {
             for(Puzzle p : puzzleList)
             {
-                if(p.getPuzzleRoomId() == r.getId())
+                if(p.getRoomId() == r.getId())
                 {
                     r.setPuzzle(p);
                 }
