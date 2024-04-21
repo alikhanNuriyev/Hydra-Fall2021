@@ -54,7 +54,7 @@ public class Map {
         for (Room i : rooms_list) {
             for(Item j : itemList)
             {
-                if(j.getItemId() == i.getId())
+                if(j.getItemRoomId() == i.getId())
                 {
                     i.addItem(j);
                 }
@@ -88,7 +88,7 @@ public class Map {
         for (Room r : rooms_list) {
             for(Puzzle p : puzzleList)
             {
-                if(p.getPuzzleId() == r.getId())
+                if(p.getPuzzleRoomId() == r.getId())
                 {
                     r.setPuzzle(p);
                 }
