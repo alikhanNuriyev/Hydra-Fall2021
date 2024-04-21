@@ -1,11 +1,9 @@
-
 Spacebound Odyssey - Text-Based Adventure Game
 
 Welcome to Spacebound Odyssey, a Java-based text adventure game set in the distant future of 2247. 
 Embark on an epic journey aboard the starship "Odyssey," where you'll explore uncharted regions of the galaxy, confront challenges, and uncover the truth behind a mysterious distress signal.
 
 How to Play
-
 Installation: No installation required. Simply download the game files and run the Main.java file in your Java IDE.
 Gameplay: Upon starting the game, you'll be introduced to the narrative and prompted with text-based commands to interact with the game world.
 Navigation: Move between rooms using directional commands (N for North, E for East, S for South, W for West).
@@ -14,6 +12,23 @@ Puzzle: Solve puzzles by interacting with them and submitting answers.
 Item: Manage artifacts found throughout the game to enhance gameplay.
 Progression: Track your progression, level up, and manage inventory.
 Game Settings: Save your game progress and load saved games to continue gameplay later.
+
+Commands: Use the following commands during gameplay:
+N,S,E,W: This feature will allow players to move between rooms and within rooms.
+Pickup + itemName: This feature will pickup a specific item in the current room.
+Drop + itemName: This feature will drop a specific item in the current room.
+Equip: This feature will equip an item from playe's inventory.
+Consume: This feature will consume an item form player's inventory.
+Level Up: This feature will allow player to level up their stats.
+Stats: This feature will allow player to access their stats.
+Detective Mode: This feature will display all items and puzzles in the current room.
+Inventory: This feature will display all items in players inventory.
+Map: This feature will allow the player to check the map.
+Save: This allows player to save the game their currently on and save any progress, items, levels, and floors completed.
+Load: This feature will allow so that the player, after saving a game, to easily load their game back with the correct amount of progress.
+Pause/Resume : This feature will allow it so that the player will be able to pause the game and resume the game.
+Restart: This feature will allow a restart to a level losing progress of the level they are currently on but not the entire game progress.
+
 
 File Structure
 Game.java: Main class to start the game.
@@ -34,7 +49,6 @@ Each line represents a room and its connections in the following format: RoomNum
 RoomNumber: The unique identifier for the room.
 Direction: The direction leading to the connected room (e.g., N for North, S for South, E for East, W for West).
 ConnectedRoom: The room number to which the direction leads.
-
 
 2. Rooms.txt
 This text file contains descriptions for each room in the game.

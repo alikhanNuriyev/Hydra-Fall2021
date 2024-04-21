@@ -1,79 +1,148 @@
-import java.io.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Scanner;
+import java.io.IOException;
+import java.util.*;
 public class Game {
-    private ArrayList<Room> rooms_list = new ArrayList<>();
+    public static void main(String[] args) throws IOException {
 
-    private String filename;
-    private ArrayList<Puzzle> puzzleArrayList = new ArrayList<>();
-    private ArrayList<Item> itemArrayList = new ArrayList<>();
-    private Room currentRoom;
-    private Room prevRoom;
-    private transient FileInputStream inputStream;
-    private transient Scanner fileIn;
+        Map map = new Map();
+        map.Initialize("Rooms.txt");
+        map.InitializeItems("Items.txt");
+        map.InitializePuzzles("Puzzles.txt");
+        Player Player1 = new Player(map.getRooms().get(0));
 
-    void InitializeRooms(String filename) throws FileNotFoundException {
+        //map.listRooms();
 
-        Scanner r_scanner = new Scanner(new File(filename));
-        r_scanner.useDelimiter("~|\n|,");
+        StartGame(Player1, map.getRooms());
 
-        while (r_scanner.hasNext()) {
-            int id = r_scanner.nextInt();
-            String name = r_scanner.next();
-            String description = r_scanner.next();
-            int north = r_scanner.nextInt();
-            int south = r_scanner.nextInt();
-            int east = r_scanner.nextInt();
-            int west = r_scanner.nextInt();
 
-            Room newRoom = new Room(id, name, description, north, south, east, west);
-            rooms_list.add(newRoom);
-
-        }
-        r_scanner.close();
     }
-    public void populateItems(File file) throws FileNotFoundException {
+    public static void StartGame(Player Player, ArrayList<Room> Map) throws IOException {
+        Scanner input = new Scanner(System.in);
 
-        Scanner i_scanner = new Scanner(new File(filename));
-        i_scanner.useDelimiter("~|\n|,");
+        System.out.print("Current location: " + Player.Getlocation().getName());
+        System.out.println();
+        System.out.println(Player.Getlocation().getDescription());
+        System.out.print("\nWhich direction do you want to travel? (N, S, E, W) ");
 
-            while (i_scanner.hasNext()) {
-                int itemId = i_scanner.nextInt();
-                String itemName = i_scanner.next();
-                String itemType = i_scanner.next();
-                String itemDescription = i_scanner.next();
-                int itemRoomId = i_scanner.nextInt();
-                int itemAttackPoints = i_scanner.nextInt();
-                int itemHealthPoints = i_scanner.nextInt();
-                int healingAmount = i_scanner.nextInt();
+        while(true) {
+            String direction = input.next();
 
-                this.itemArrayList.add(int itemId, String itemName, String itemType, String itemDescription, int itemRoom, int itemAttackPoints, int itemHealthPoints, double healingAmount)
+            //Inspect
+            if(direction.equalsIgnoreCase("P"))
+            {
+                System.out.print("\nWhat item do you want to inspect? ");
+                direction = input.next();
 
+                Player.Inpsect(direction);
+                System.out.print("\nWhich direction do you want to travel? (N, S, E, W) ");
+                continue;
+            }
 
-        }
-    }
-        void InitializeMonster(String filename) throws FileNotFoundException {
+            //Access Inventory
+            if(direction.equalsIgnoreCase("I"))
+            {
+                System.out.println("These are the Items in your inventory:");
+                Player.showInventory();
+                System.out.print("\nWhich direction do you want to travel? (N, S, E, W) ");
+                continue;
+            }
 
-            Scanner m_scanner = new Scanner(new File(filename));
-            m_scanner.useDelimiter("~|\n|,");
-            //Reads file
-            while (m_scanner.hasNext()) {
-                int monsterID = m_scanner.nextInt();
-                String monsterName = m_scanner.next();
-                String monsterDescription = m_scanner.next();
-                int monsterHealthPoints = m_scanner.nextInt();
-                int monsterAttackPoints = m_scanner.nextInt();
-                String monsterLocation = m_scanner.next();
+            //Grab Item
+            if(direction.equalsIgnoreCase("G")||direction.equalsIgnoreCase("grab"))
+            {
+                System.out.print("\nWhat item do you want to grab? ");
+                direction = input.next();
 
+                Player.pickUp(direction);
+                System.out.print("\nWhich direction do you want to travel? (N, S, E, W) ");
+                continue;
+            }
 
-                Monster newMonster = new Monster(monsterID, monsterName, monsterDescription, monsterHealthPoints, monsterAttackPoints, monsterLocation) {
+            //Drop Item
+            if(direction.equalsIgnoreCase("D")||direction.equalsIgnoreCase("drop"))
+            {
+                System.out.print("\nWhat item do you want to drop? ");
+                direction = input.next();
 
+                Player.Drop(direction);
+                System.out.print("\nWhich direction do you want to travel? (N, S, E, W) ");
+                continue;
+            }
 
+            //Search Room
+            if(direction.equalsIgnoreCase("l")||direction.equalsIgnoreCase("look"))
+            {
+                System.out.println("These are the visible items in this room:");
+                Player.showCurrentLocationInventory();
+                System.out.print("\nWhich direction do you want to travel? (N, S, E, W) ");
+                continue;
+            }
+
+            //Directional Navigation
+            if (direction.equalsIgnoreCase("N")) {
+                if(Player.CheckNorth() == 0)
+                { System.out.println("You cannot move in that direction.");}
+
+                else if (Player.CheckNorth() != 0) {
+                    Player.Setlocation(Map.get(Player.CheckNorth()-1));
                 }
 
+            }
 
-            }}}
+            else if (direction.equalsIgnoreCase("S")) {
+                if(Player.CheckSouth() == 0)
+                { System.out.println("You cannot move in that direction.");}
+
+                else if (Player.CheckSouth() != 0) {
+                    Player.Setlocation(Map.get(Player.CheckSouth()-1));
+                }
+
+            }
+
+            else if (direction.equalsIgnoreCase("E")) {
+                if(Player.CheckEast() == 0)
+                { System.out.println("You cannot move in that direction.");}
+
+                else if (Player.CheckEast() != 0) {
+                    Player.Setlocation(Map.get(Player.CheckEast()-1));
+                }
+
+            }
+
+            else if (direction.equalsIgnoreCase("W")) {
+                if(Player.CheckWest() == 0)
+                { System.out.println("You cannot move in that direction.");}
+
+                else if (Player.CheckWest() != 0) {
+                    Player.Setlocation(Map.get(Player.CheckWest()-1));
+                }
+
+            }
+            else if(direction.equalsIgnoreCase("exit"))
+            {
+                System.out.println("Exiting Game");
+                System.out.println("Thank you for playing.");
+                break;
+            }
+
+            else {
+                System.out.println("Invalid Input");
+            }
 
 
+            System.out.print("Current location: " + Player.Getlocation().getName());
+            if(Player.Getlocation().CheckVisited()){ System.out.print(" (Visited)");}
+            System.out.println();
+            System.out.println(Player.Getlocation().getDescription());
+
+            if(Player.current_location.hasPuzzle)
+            {
+//                Player.current_location.puzzle.startPuzzle();
+            }
+
+            System.out.print("\nWhich direction do you want to travel? (N, S, E, W) ");
+            Map.get(Player.Getlocation().getId() -1).setVisited();
+        }
+
+        input.close();
+    }
+}

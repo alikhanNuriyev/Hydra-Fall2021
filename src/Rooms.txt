@@ -127,4 +127,3 @@ West: 11
 22
 Secret Room
 The Secret Chamber is a clandestine vault filled with a treasure trove of valuable loot, including rare artifacts, advanced technology, and precious resources. This room can only be accessed by way of teleportation.
-
