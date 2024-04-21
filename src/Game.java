@@ -4,7 +4,7 @@ public class Game {
     public static void main(String[] args) throws IOException {
 
         Map map = new Map();
-        map.Initialize("src//Rooms.txt");
+        map.Initialize("Rooms.txt");
         map.listRooms();
         map.InitializeItems("src//Items.txt");
         //map.InitializePuzzles("src//puzzles.txt");
