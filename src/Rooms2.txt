@@ -1,0 +1,123 @@
+1
+Shuttle Bay
+The area is expensive, with a cavernous ceiling allowing for the docking of multiple shuttles. No enemies in this room.East: 2
+0~0~2~3
+2
+Maintenance Hangar
+The hangar bay is dedicated to the maintenance and repair of smaller spacecraft vessels. Few numbers of unarmed enemies running diagnostics on the spacecrafts.
+4~0~0~1
+3
+Cargo Loading Zone
+The cargo loading zone serves as the primary area for loading and unloading cargo onto the spaceship. There are many enemies in the room checking every cargo container.
+0~0~0~4
+Fighter Squadron Dock
+This room houses the fleet of fighter spacecraft used for defensive maneuvers and tactical engagements. There are many armed enemies running diagnostics on heavy artillery. Proceed with caution.
+0~2~0~5
+West: 5
+5
+Slimeoid Primce
+Floor 1 Boss Room is the room that hosts the boss Slimeoid Prime, the Mutant Slime
+North: 21
+East: 4
+
+6 
+Cyro-Pods
+This room is dominated by rows of sleek, high-tech cryo-pods, each capable of preserving a patient in suspended animation for extended periods.
+North: 10
+East: 8
+South: 7
+West: 21
+
+7
+Quarantine Chamber
+This room is designed to isolate and contain potentially hazardous biological or contagiously infected individuals.
+North: 6
+
+8
+Operating Theater
+This room houses state of the art operating theater equipped for performing surgical procedures of varying complexity.
+East: 9
+West: 6
+
+9
+Examination Room
+This level of the medical bay serves as a general-purpose examination area for assessing the health and medical needs of the ship’s crew and passengers.
+West: 8
+
+10
+Dr. Xer'kal
+Floor 2 Boss Room is the room that hosts the boss Dr. Xer'kal, the Mad Scientist
+South: 6
+
+11
+Maintenance Bay
+The maintenance bay is a bustling hub of activity, with engineers and technicians working tirelessly to ensure the smooth operation of the ship’s machinery.
+North: 13
+East: 21
+
+12
+Fuel Storage
+The fuel storage room is dedicated to the storage and management of the ship's fuel reserves.
+East: 15
+South: 13
+
+13
+Auxiliary Systems Control
+This room houses the control center for the ship’s auxiliary systems, responsible for regulating power distribution, environmental controls, and other critical functions.
+North: 12
+South: 11
+
+14
+Main Reactor Chamber
+At the heart of the engineering deck lies the main reactor chamber, where the ship’s power source is housed.
+West : 15
+
+15
+Byte-Bane
+This room hosts the level 3 boss: Byte-Bane, Guardian of the Engine Core.
+East: 14
+West: 12
+
+16
+Observation Deck
+The observation deck offers a panoramic view of the surrounding space, providing a breathtaking vista of stars, planets, and celestial phenomena.
+North: 18
+East: 17
+South: 21
+
+17
+Communications
+The nerve center for all incoming and outgoing transmissions aboard the spaceship.
+North: 19
+West: 16
+
+18
+Captain’s Quarters
+The captain’s quarter exudes an air of luxury and refinement befitting the commanding officer of the spaceship.
+East: 19
+South: 16
+
+19
+Control Room
+At the highest level of the ship lies the control room, the nerve center of the entire vessel’s operation.
+North: 20
+South: 17
+West: 18
+
+20
+Voidspawn
+This rooms host the Floor 4 boss: Voidspawn, the Space Threat
+South: 19
+
+21
+Lobby
+This room has no monsters, items, or puzzles. This room is meant to be a resting room the player can enter without having to worry about any monsters
+North: 16
+East: 6
+South: 5
+West: 11
+
+22
+Secret Room
+The Secret Chamber is a clandestine vault filled with a treasure trove of valuable loot, including rare artifacts, advanced technology, and precious resources. This room can only be accessed by way of teleportation.
+
