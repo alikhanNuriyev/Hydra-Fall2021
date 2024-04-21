@@ -1,3 +1,4 @@
+N~S~E~W
 1
 Shuttle Bay
 The area is expensive, with a cavernous ceiling allowing for the docking of multiple shuttles. No enemies in this room.East: 2
@@ -13,6 +14,7 @@ The cargo loading zone serves as the primary area for loading and unloading carg
 Fighter Squadron Dock
 This room houses the fleet of fighter spacecraft used for defensive maneuvers and tactical engagements. There are many armed enemies running diagnostics on heavy artillery. Proceed with caution.
 0~2~0~5
+
 West: 5
 5
 Slimeoid Primce

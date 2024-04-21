@@ -5,6 +5,7 @@ public class Game {
 
         Map map = new Map();
         map.Initialize("src//Rooms.txt");
+        map.listRooms();
         //map.InitializeItems("src//items.txt");
         //map.InitializePuzzles("src//puzzles.txt");
         Player Player1 = new Player(1, 50, 25, 0, map.getRooms().get(0));
