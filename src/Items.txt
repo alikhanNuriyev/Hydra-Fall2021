@@ -3,87 +3,58 @@
 Cosmic Teleporter
 K
 Used to teleport to a secret room
-0
-0
-0
-
+0~0~0
 2
 14
 Galactic Key
 K
 Used to open level 4 floor
-0
-0
-0
-
+0~0~0
 3
 99
 Quantum Tonic
 C
 Used to heal half of player health
-0
-0
-0.5
-
+0~0~0.5
 4
 ALL
 Nova Nectar
 C
 Used to boost a player random stat by 5
-5
-5
-0
-
+5~5~0
 5
 22
 Intergalactic Elixer
 C
 Used to boost the player health stats by 50
-50
-50
-0
-
+50~50~0
 6
 5
 Nebula Blade
 W
 Used to boost the player attacking stat by 10
-0
-10
-0
-
+0~10~0
 7
 15
 Comet Hammer
 W
 Used to boost the player attacking stat by 15
-0
-15
-0
-
+0~15~0
 8
 5
 Galaxy Shield
 A
 Used to boost the player health stat by 10
-10
-0
-0
-
+10~0~0
 9
 10
 Cosmic Armor
 A
 Used to boost the player health stat by 15
-15
-0
-0
-
+15~0~0
 10
 22
 Intergalactic Suit
 W
 Used to boost the player attacking stats by 50
-0
-50
-0
+0~50~0

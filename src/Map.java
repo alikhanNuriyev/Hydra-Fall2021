@@ -42,14 +42,14 @@ public class Map {
 
         while (i_scanner.hasNext())
         {
-            int id = Integer.parseInt(i_scanner.nextLine());
+            int id =Integer.parseInt(i_scanner.nextLine());
             int roomId = Integer.parseInt(i_scanner.nextLine());
             String name = i_scanner.nextLine();
             String type = i_scanner.nextLine();
             String desc = i_scanner.nextLine();
-            int atk = Integer.parseInt(i_scanner.nextLine());
-            int health = Integer.parseInt(i_scanner.nextLine());
-            float heal = Integer.parseInt(i_scanner.nextLine());
+            int atk = i_scanner.nextInt();
+            int health = i_scanner.nextInt();
+            float heal = i_scanner.nextFloat();
             itemList.add(new Item(id, roomId, name, type, desc, atk, health, heal));
         }
         loadRoomInventory();
