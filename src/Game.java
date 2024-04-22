@@ -1,26 +1,31 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 public class Game {
     public static void main(String[] args) throws IOException {
 
         Map map = new Map();
-        map.Initialize("Rooms.txt");
-        map.listRooms();
-        map.InitializeItems("src//Items.txt");
-        //map.InitializePuzzles("src//puzzles.txt");
-        Player Player1 = new Player(1, 50, 25, 0, map.getRooms().get(0));
-
+        map.Initialize("src//Rooms.txt");
         //map.listRooms();
+        map.InitializeItems("src//Items.txt");
+        map.InitializePuzzles("src//Puzzles.txt");
+        map.InitializeMonsters("src//Monsters.txt");
+        //map.listMonsters();
+        Player Player = new Player(1, 50, 25, 0, map.getRooms().get(0));
 
-        //StartGame(Player1, map.getRooms());
+        showMap();
+        StartGame(Player, map.getRooms());
 
 
     }
-    /*
+
     public static void StartGame(Player Player, ArrayList<Room> Map) throws IOException {
         Scanner input = new Scanner(System.in);
+        String target = "";
 
-        System.out.print("Current location: " + Player.getCurrentRoom().getName());
+        System.out.print("Current location: " + Player.getCurrentRoom().getName() + "RoomId: " + Player.getCurrentRoom().getId());
         System.out.println();
         System.out.println(Player.getCurrentRoom().getDescription());
         System.out.print("\nWhich direction do you want to travel? (N, S, E, W) ");
@@ -32,12 +37,39 @@ public class Game {
             if(direction.equalsIgnoreCase("P"))
             {
                 System.out.print("\nWhat item do you want to inspect? ");
-                direction = input.next();
+                input.nextLine();
+                target = input.nextLine();
 
-                Player.Inpsect(direction);
+                Player.Inpsect(target);
                 System.out.print("\nWhich direction do you want to travel? (N, S, E, W) ");
                 continue;
             }
+
+            //consume
+            if(direction.equalsIgnoreCase("consume"))
+            {
+                System.out.print("\nWhat item do you want to consume? ");
+                input.nextLine();
+                target = input.nextLine();
+
+                Player.Consume(target);
+                System.out.print("\nWhich direction do you want to travel? (N, S, E, W) ");
+                continue;
+            }
+
+            //equip
+            if(direction.equalsIgnoreCase("equip"))
+            {
+                System.out.print("\nWhat item do you want to equip? ");
+                input.nextLine();
+                target = input.nextLine();
+
+                Player.Equip(target);
+                System.out.print("\nWhich direction do you want to travel? (N, S, E, W) ");
+                continue;
+            }
+
+
 
             //Access Inventory
             if(direction.equalsIgnoreCase("I"))
@@ -48,13 +80,17 @@ public class Game {
                 continue;
             }
 
-            //Grab Item
-            if(direction.equalsIgnoreCase("G")||direction.equalsIgnoreCase("grab"))
-            {
-                System.out.print("\nWhat item do you want to grab? ");
-                direction = input.next();
 
-                Player.pickUp(direction);
+
+
+            //Grab Item
+            if(direction.equalsIgnoreCase("pick")||direction.equalsIgnoreCase("pickup"))
+            {
+                System.out.print("\nWhat item do you want to pickup? ");
+                input.nextLine();
+                target = input.nextLine();
+
+                Player.pickUp(target);
                 System.out.print("\nWhich direction do you want to travel? (N, S, E, W) ");
                 continue;
             }
@@ -71,13 +107,33 @@ public class Game {
             }
 
             //Search Room
-            if(direction.equalsIgnoreCase("l")||direction.equalsIgnoreCase("look"))
+            if(direction.equalsIgnoreCase("detective")||direction.equalsIgnoreCase("detect"))
             {
                 System.out.println("These are the visible items in this room:");
                 Player.showCurrentLocationInventory();
+                Player.getCurrentRoom().viewPuzzle();
+                Player.showCurrentLocationMonsters();
                 System.out.print("\nWhich direction do you want to travel? (N, S, E, W) ");
                 continue;
             }
+
+            //Show Stats
+            if(direction.equalsIgnoreCase("stats")||direction.equalsIgnoreCase("stat"))
+            {
+                Player.showStats();
+                System.out.print("\nWhich direction do you want to travel? (N, S, E, W) ");
+                continue;
+            }
+
+            //Show Map
+            if(direction.equalsIgnoreCase("map")||direction.equalsIgnoreCase("m"))
+            {
+                showMap();
+                System.out.print("\nWhich direction do you want to travel? (N, S, E, W) ");
+                continue;
+            }
+
+            //Equip Item
 
             //Directional Navigation
             if (direction.equalsIgnoreCase("N")) {
@@ -126,12 +182,12 @@ public class Game {
                 break;
             }
 
-            else {
+                        else {
                 System.out.println("Invalid Input");
             }
 
 
-            System.out.print("Current location: " + Player.getCurrentRoom().getName());
+            System.out.print("Current location: " + Player.getCurrentRoom().getName() + "RoomId: " + Player.getCurrentRoom().getId());
             if(Player.getCurrentRoom().CheckVisited()){ System.out.print(" (Visited)");}
             System.out.println();
             System.out.println(Player.getCurrentRoom().getDescription());
@@ -141,12 +197,106 @@ public class Game {
                 Player.getCurrentRoom().puzzle.startPuzzle();
             }
 
+            if(Player.getCurrentRoom().hasMonster)
+            {
+                Player.setEngagedMonster(Player.getCurrentRoom().getMonster());
+                initiateCombat(input, Player, Player.getEngagedMonster());
+            }
+
             System.out.print("\nWhich direction do you want to travel? (N, S, E, W) ");
             Map.get(Player.getCurrentRoom().getId() -1).setVisited();
         }
 
         input.close();
     }
-    */
 
+    //Combat
+    private static void initiateCombat(Scanner scanner, Player player, Monster monster) throws IOException {
+        //int playerHealth = Player.getPlayerInstance().getCurrentHealth();
+        System.out.println("WARNING a hostile " + monster.getMonsterName() + " approaches!");
+        System.out.println("Player's Health: " + player.getPlayerCurrentHealth());
+        player.setEngagedMonster(monster);
+
+
+        int monsterHealth = player.getEngagedMonster().getMonsterHealthPoints();
+        System.out.println(player.getEngagedMonster().getMonsterName() + "'s Health: " + monsterHealth);
+
+        while (player.getPlayerCurrentHealth() > 0 && monsterHealth > 0) {
+            System.out.println("Player's Turn:");
+            System.out.print("Your action, type 'attack' to deal damage. \n");
+            String action = scanner.next();
+            scanner.nextLine();
+
+            if (action.equalsIgnoreCase("attack")){
+                //int playerDamage = calculatePlayerDamage();
+                player.getEngagedMonster().modHealth(player.getPlayerAttackPoints());
+                System.out.println("Player deals " + player.getPlayerAttackPoints() + " damage to " + player.getEngagedMonster().getMonsterName() + ".");
+            }else
+            {
+                System.out.println("Invalid Input.");
+                continue;
+            }
+
+            if (player.getEngagedMonster().getMonsterHealthPoints() <= 0) {
+                System.out.println("Player defeats " + player.getEngagedMonster().getMonsterName() + "!");
+                player.getEngagedMonster().setDefeated(true);
+                player.defeatMonster();
+                System.out.println("Congratulations! You have defeated the monster. \n");
+                System.out.println("You leveled up! Your stats have increased!");
+                break;
+            }
+
+            System.out.println("Monster's Turn:");
+            int monsterDamage = player.getEngagedMonster().getMonsterAttackPoints();
+            player.playerTakeDamage(monsterDamage);
+            System.out.println(player.getEngagedMonster().getMonsterName() + " deals " + monsterDamage + " damage to the player.");
+
+            if (player.getPlayerCurrentHealth() <= 0) {
+                System.out.println("Player is defeated by " + player.getEngagedMonster().getMonsterName() + "!");
+                handleGameOver(scanner);
+                return;
+            }
+            System.out.println("Player's Health: " + player.getPlayerCurrentHealth());
+            System.out.println(player.getEngagedMonster().getMonsterName() + "'s Health: " + player.getEngagedMonster().getMonsterHealthPoints());
+        }
+    }
+
+    private static void showMap() throws IOException {
+        BufferedReader br = new BufferedReader(new FileReader("src//Utilities.txt"));
+        String line;
+        while ((line = br.readLine()) != null) {
+            System.out.println(line);
+        }
+        br.close();
+    }
+
+    public static void handleGameOver(Scanner scanner) throws IOException {
+        System.out.println("Game Over! You have two choices:");
+        System.out.println("1. Exit");
+        System.out.println("2. Start New Game");
+        System.out.print("Enter your choice (1/2): ");
+        int choice = scanner.nextInt();
+        scanner.nextLine();
+        switch (choice) {
+            case 1:
+                System.out.println("Exiting the game.");
+                System.exit(0);
+                break;
+                case 2:
+                System.out.println("Starting a new game. Enter leave fight command");
+                Map map = new Map();
+                map.Initialize("src//Rooms.txt");
+                map.InitializeItems("src//Items.txt");
+                map.InitializePuzzles("src//Puzzles.txt");
+                map.InitializeMonsters("src//Monsters.txt");
+                Player player = new Player(1, 50, 25, 0, map.getRooms().get(0));
+                StartGame(player, map.getRooms());
+                break;
+                default:
+            System.out.println("Invalid choice. Exiting the game.");
+            System.exit(0);
+        }
+    }
 }
+
+

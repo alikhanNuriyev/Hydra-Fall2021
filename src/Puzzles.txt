@@ -1,5 +1,5 @@
 1
-1
+2
 Galactic Anagram
 Unscramble the letters to reveal the hidden word: "LIENA"
 Alien
@@ -53,3 +53,4 @@ Arrange in ascending order: “4, 0.12, 5, 1, 0.08”.
 0.08, 0.12 , 1, 4, 5
 There is no hint available for this puzzle
 3
+

@@ -1,7 +1,7 @@
 1
-10
+1
 Cosmic Teleporter
-K
+C
 Used to teleport to a secret room
 0~0~0
 2
@@ -11,13 +11,13 @@ K
 Used to open level 4 floor
 0~0~0
 3
-99
+1
 Quantum Tonic
 C
 Used to heal half of player health
 0~0~0.5
 4
-ALL
+99
 Nova Nectar
 C
 Used to boost a player random stat by 5
@@ -29,7 +29,7 @@ C
 Used to boost the player health stats by 50
 50~50~0
 6
-5
+1
 Nebula Blade
 W
 Used to boost the player attacking stat by 10

@@ -1,13 +1,3 @@
-Welcome to the world of "Spacebound Odyssey," adventurer! 
-As you stand before the entrance of the starship Odyssey, you feel a sense of anticipation and excitement coursing through your veins. 
-The sleek exterior of the ship hints at the adventures that await you within its vast corridors.
-You are about to embark on a journey of discovery, danger, and heroism aboard the Odyssey, a starship tasked with exploring uncharted regions of the galaxy.
-As you step inside, whispers of transformative workouts and hidden techniques swirl around you, urging you to unlock the secrets of peak performance amidst the cosmos.
-Your first destination is the Shuttle Bay.
-
-
-Here is the layout of the Spacebound Odyssey to help guide you:
-
                                                                              ----
                                                                             | 20 |
                                                                              ----
@@ -33,7 +23,7 @@ Here is the layout of the Spacebound Odyssey to help guide you:
                              ----                               ----         ---       ---       ---
                                                                  |            | 
                                                    ----          |            |
-                                                  | 21 |         |           --- 
+                                                  | 22 |         |           ---
                                                    ----          |          | 7 |
                                                                  |           ---
                                                                  |

@@ -20,6 +20,9 @@ public class Room {
     protected Puzzle puzzle;
     boolean hasPuzzle;
 
+    private Monster monster;
+    boolean hasMonster;
+
     public Room(int id, String name, String description, int north_room, int south_room, int east_room, int west_room) {
         this.id = id;
         this.is_visited = false;
@@ -36,6 +39,29 @@ public class Room {
         this.puzzle = p;
         hasPuzzle = true;
     }
+
+    void setMonster(Monster m)
+    {
+        this.monster = m;
+        hasMonster = true;
+    }
+
+    void viewMonster()
+    {
+        System.out.println("You spy a " + monster.getMonsterName() + ", "+ monster.getMonsterDescription());
+    }
+
+    Monster getMonster()
+    {
+        return monster;
+    }
+
+
+    void viewPuzzle()
+    {
+        System.out.println("There is a " + puzzle.getPuzzleName() + " puzzle in this room.");
+    }
+
 
     void disablePuzzle()
     {

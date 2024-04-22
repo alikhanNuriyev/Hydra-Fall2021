@@ -9,6 +9,13 @@ public class Item {
     private int itemId;
     private String itemName;
     private String itemType;
+
+    @Override
+    public String toString() {
+        return itemName + ", " +
+                itemDescription + ' ';
+    }
+
     private String itemDescription;
     private int itemRoomId;
     private int itemAttackPoints;
@@ -18,7 +25,7 @@ public class Item {
 
 	// Alikhan - Here is the constructor for Item class. Feel free to add, change, or delete anything as long as it makes sense for the requirements 
     // Josiah - Modified constructure to include type and healing amount
-    public Item(int itemId, int itemRoom, String itemType, String itemName, String itemDescription, int itemAttackPoints, int itemHealthPoints, double healingAmount) {
+    public Item(int itemId, int itemRoom, String itemName, String itemType, String itemDescription, int itemAttackPoints, int itemHealthPoints, double healingAmount) {
         this.itemId = itemId;
         this.itemName = itemName;
         this.itemType = itemType;

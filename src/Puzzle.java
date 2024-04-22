@@ -116,6 +116,7 @@ public class Puzzle {
 						giveHint();
 					}else if(input.equalsIgnoreCase("quit"))
 					{
+						System.out.println("You quit the puzzle.");
 						puzzleFailed = true;
 						break;
 					}
@@ -131,7 +132,7 @@ public class Puzzle {
 	//Added Solve puzzle
 	void solvePuzzle(String a) {
 		if (a.equalsIgnoreCase(puzzleAnswer)) {
-			System.out.println("Correct Answer! You have solved the puzzle correctly!.");
+			System.out.println("Correct Answer! You have solved the puzzle correctly!");
 			puzzleSolved = true;
 		}
 		else
@@ -140,12 +141,6 @@ public class Puzzle {
 			System.out.println("Incorrect answer. You have " + remainingAttempts + " attempts left");
 
 		}
-	}
-
-	//Josiah - added Solve Rng puzzle method
-	void solveRngPuzzle()
-	{
-
 	}
 
 	//Josiah - Added hive hint method

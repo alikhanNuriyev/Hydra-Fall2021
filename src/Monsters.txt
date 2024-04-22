@@ -1,64 +1,64 @@
-ID: 1
-Name: Slimeoid Prime
-Description: A mix of slime and alien stuff. Watch out for its acid!
-Health Points: 200
-Attack Points: 30
-Location: 5
-Drop Items: Nebula Blade, Galaxy Shield
+1
+Slimeoid Prime
+A mix of slime and alien stuff. Watch out for its acid!
+200
+30
+2~0
+Nebula Blade~Galaxy Shield
 
-ID: 2
-Name: Dr.Xer'kal
-Description: He is an alien scientist doing weird experiments on a ship. His lab is full of scary stuff. He's a bit mad, so be careful!
-Health Points: 300
-Attack Points: 40
-Location: 10
-Drop Items: 0
+2
+Dr.Xer'kal
+He is an alien scientist doing weird experiments on a ship. His lab is full of scary stuff. He's a bit mad, so be careful!
+300
+40
+10~0
+0~0
 
-ID: 3
-Name: Byte-Bane
-Description: A computer with arms and legs, guarding the ship's engine. It is good at controlling things and will try to stop you.
-Health Points: 300
-Attack Points: 45
-Location: 15
-Drop Items: Commet Hammer
+3
+Byte-Bane
+A computer with arms and legs, guarding the ship's engine. It is good at controlling things and will try to stop you.
+300
+45
+15~0
+Comet Hammer~0
 
-ID: 4
-Name: Voidspawn
-Description: Voidspawn is a big problem for the ship and its crew. It's like a powerful force from the dark part of space. Watch out for this one!
-Health Points: 350
-Attack Points: 50
-Location: 20
-Drop Items: 0
+4
+Voidspawn
+Voidspawn is a big problem for the ship and its crew. It's like a powerful force from the dark part of space. Watch out for this one!
+350
+50
+20~0
+0~0
 
-ID: 5
-Name: Wisps
-Description: Glowing creatures that float around and zap your energy when they touch you.
-Health Points: 40
-Attack Points: 10
-Location: 2, 4
-Drop Items: Quantum Tonic, Nova Nectar
+5
+Wisp
+Glowing creatures that float around and zap your energy when they touch you.
+40
+10
+2~4
+Quantum Tonic~Nova Nectar
 
-ID: 6
-Name: Scrapclawlers
-Description: Small robots with sharp claws, scurrying around to attack you.
-Health Points: 50
-Attack Points: 15
-Location: 7, 9
-Drop Items: Quantum Tonic, Nova Nectar
+6
+Scrapclawler
+Small robots with sharp claws, scurrying around to attack you.
+50
+15
+7~9
+Quantum Tonic~Nova Nectar
 
-ID: 7
-Name: Blobs
-Description: Swollen aliens release harmful fumes and acid.
-Health Points: 70
-Attack Points: 20
-Location: 13, 14
-Drop Items: Quantum Tonic, Nova Nectar
+7
+Blob
+Swollen aliens release harmful fumes and acid.
+70
+20
+13~14
+Quantum Tonic~Nova Nectar
 
-ID: 8
-Name: Melodies
-Description: Ghostly figures using haunting tunes to trick and trap you.
-Health Points: 60
-Attack Points: 25
-Location: 16, 19
-Drop Items: Quantum Tonic, Nova Nectar
+8
+Melodie
+Ghostly figures using haunting tunes to trick and trap you.
+60
+25
+16~19
+Quantum Tonic~Nova Nectar
 

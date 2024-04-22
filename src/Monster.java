@@ -11,10 +11,9 @@ public class Monster {
     private int monsterHealthPoints;
     private int monsterAttackPoints;
     private int monsterLocation;
-    private int threshold;
     private boolean defeated;
 
-    public Monster(int monsterID, String monsterName, String monsterDescription, int monsterHealthPoints, int monsterAttackPoints, int monsterLocation) {
+    public Monster(int monsterID, String monsterName, String monsterDescription, int monsterHealthPoints, int monsterAttackPoints, int monsterLocation, String drop) {
         this.monsterID = monsterID;
         this.monsterName = monsterName;
         this.monsterDescription = monsterDescription;
@@ -22,11 +21,10 @@ public class Monster {
         this.monsterAttackPoints = monsterAttackPoints;
         this.monsterLocation = monsterLocation;
     }
-    public Monster(String monsterName, String monsterDescription, int monsterAttackPoints, int threshold, int monsterLocation, int monsterHealthPoints) {
+    public Monster(String monsterName, String monsterDescription, int monsterAttackPoints, int monsterLocation, int monsterHealthPoints, String drop) {
         this.monsterName = monsterName;
         this.monsterDescription = monsterDescription;
         this.monsterAttackPoints = monsterAttackPoints;
-        this.threshold = threshold;
         this.monsterLocation = monsterLocation;
         this.monsterHealthPoints = monsterHealthPoints;
         this.defeated = false;
@@ -82,12 +80,11 @@ public class Monster {
     public void monsterCombat(){
 
     }
-	public int getThreshold() {
-		return threshold;
-	}
-	public void setThreshold(int threshold) {
-		this.threshold = threshold;
-	}
+
+    void modHealth(int amount)
+    {
+        this.monsterHealthPoints -= amount;
+    }
 	public boolean isDefeated() {
 		return defeated;
 	}
@@ -95,24 +92,4 @@ public class Monster {
 		this.defeated = defeated;
 	}
 
-    public static Map<Integer, Monster> readMonsters(String filename) throws IOException {
-        Map<Integer, Monster> monsters = new HashMap<>();
-        BufferedReader reader = new BufferedReader(new FileReader(filename));
-        String line;
-        int monsterId = 1;
-        while ((line = reader.readLine()) != null) {
-            String[] parts = line.trim().split(",");
-            String monsterName = parts[0];
-            String description = parts[1];
-            int attackDamage = Integer.parseInt(parts[2]);
-            int threshold = Integer.parseInt(parts[3]);
-            int roomNumber = Integer.parseInt(parts[4]);
-            int health = Integer.parseInt(parts[5]);
-            Monster monster = new Monster(monsterName, description, attackDamage, threshold, roomNumber, health);
-            monsters.put(monsterId++, monster);
-        }
-        reader.close();
-        return monsters;
-    }
-	
 }
